@@ -8,11 +8,14 @@
 <h1>Active Jobs</h1>
 <ul>
   {% for job in active_jobs %}
-  <li><strong>{{ job.title|title }}</strong></li>
-  <div>{{ job.company|title }}</div>
-  <div>
-    <a href="{% url 'detail' job.id %}">View Details</a>
-  </div>
+    <li>
+      <strong>{{ job.title|title }}</strong>
+      <div>{{ job.company|title }}</div>
+      <div>
+        <a href="{% url 'detail' job.id %}">View Details</a>
+      </div>
+    </li>
+    <br/>
   {% endfor %}
 </ul>
 <h1>Non-Active Jobs</h1>
