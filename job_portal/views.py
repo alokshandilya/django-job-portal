@@ -11,3 +11,11 @@ def index(request, *args, **kwargs):
         "not_active_jobs": not_active_jobs,
     }
     return render(request, "job_portal/index.html", context)
+
+
+def detail(request, id):
+    job = Job.objects.get(id=id)
+    context = {
+        "job": job,
+    }
+    return render(request, "job_portal/detail.html", context)

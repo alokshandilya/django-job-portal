@@ -1,0 +1,16 @@
+{% extends "job_portal/base.html" %}
+
+{% load humanize %}
+
+{% block title %}
+  {{ job.title|title }}
+{% endblock %}
+
+{% block content %}
+<ul>
+  <h1><strong>{{ job.title|title }}</strong></h1>
+  <h2>{{ job.company|title }}</h2>
+  <p><em>{{ job.description }}</em></p>
+  <p><strong>Salary: </strong>{{ job.salary|intcomma }} (INR) per annum</p>
+  <br/>
+{% endblock %}

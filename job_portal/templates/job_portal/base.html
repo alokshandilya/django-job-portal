@@ -1,0 +1,22 @@
+{% load humanize %}
+<html>
+  <head>
+    <title>
+      {% block title %}
+      ?
+      {% endblock %}
+      | Job Board
+    </title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+</html>
