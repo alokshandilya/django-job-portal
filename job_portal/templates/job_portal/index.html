@@ -1,0 +1,22 @@
+{% load humanize %}
+<html>
+  <h1>Active Jobs</h1>
+  <ul>
+    {% for job in active_jobs %}
+    <li><strong>{{ job.title|title }}</strong></li>
+    <div>{{ job.company|title }}</div>
+    <div><em>{{ job.description }}</em></div>
+    <div>{{ job.salary|intcomma }} (INR) per annum</div>
+    <br/>
+    {% endfor %}
+  </ul>
+  <h1>Non-Active Jobs</h1>
+  <ul>
+    {% for job in not_active_jobs %}
+    <li><strong>{{ job.title|title }}</strong></li>
+    <div>{{ job.company|title }}</div>
+    <div><em>{{ job.description }}</em></div>
+    <div>{{ job.salary|intcomma }} (INR) per annum</div>
+    <br/>
+    {% endfor %}
+</html>
