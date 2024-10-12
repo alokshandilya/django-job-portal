@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Job
 
@@ -14,7 +14,7 @@ def index(request, *args, **kwargs):
 
 
 def detail(request, id):
-    job = Job.objects.get(id=id)
+    job = get_object_or_404(Job, id=id, is_active=True)
     context = {
         "job": job,
     }

@@ -20,9 +20,6 @@
   {% for job in not_active_jobs %}
   <li><strong>{{ job.title|title }}</strong></li>
   <div>{{ job.company|title }}</div>
-  <div>
-    <a href="{% url 'detail' job.id %}">View Details</a>
-  </div>
   <br/>
   {% endfor %}
 {% endblock %}
